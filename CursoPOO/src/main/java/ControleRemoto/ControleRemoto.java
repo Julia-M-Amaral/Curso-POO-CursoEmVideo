@@ -8,7 +8,7 @@ package ControleRemoto;
  *
  * @author jubsz
  */
-public class ControleRemoto {
+public class ControleRemoto implements Controlador {
     
     private int volume;
     private boolean ligado;
@@ -44,6 +44,59 @@ public class ControleRemoto {
 
     public void setTocando(boolean t) {
         this.tocando = t;
+    }
+
+    /*Métodos abstratos*/
+    
+    @Override
+    public void ligar() {
+        this.setLigado(true);
+    }
+
+    @Override
+    public void desligar() {
+        this.setLigado(false);
+    }
+
+    @Override
+    public void abrirMenu() {
+        
+        System.out.println("Está ligado? " + this.isLigado());
+        System.out.println("Está tocando? " + this.isTocando());
+        System.out.println("Volume: " + this.getVolume());
+        
+        for(int i = 0; i <= this.getVolume(); i+= 10){
+            System.out.println(" | "); 
+        }
+        
+    }
+
+    @Override
+    public void fecharMenu() {
+        System.out.println("Fechando menu...");
+    }
+
+    @Override
+    public void maisVolume() {
+        if(this.isLigado()){
+            
+        }
+    }
+
+    @Override
+    public void menosVolume() {
+    }
+
+    @Override
+    public void ligarMudo() {
+    }
+
+    @Override
+    public void play() {
+    }
+
+    @Override
+    public void pause() {
     }
     
     
