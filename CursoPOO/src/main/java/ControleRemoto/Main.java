@@ -14,6 +14,8 @@ public class Main {
         ControleRemoto c = new ControleRemoto();
         
         c.ligar();
+        c.maisVolume();
+        c.play();
         c.abrirMenu();
         
     }

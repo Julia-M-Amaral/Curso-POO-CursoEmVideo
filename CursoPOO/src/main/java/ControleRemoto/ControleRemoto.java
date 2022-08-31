@@ -63,10 +63,10 @@ public class ControleRemoto implements Controlador {
         
         System.out.println("Está ligado? " + this.isLigado());
         System.out.println("Está tocando? " + this.isTocando());
-        System.out.println("Volume: " + this.getVolume());
+        System.out.print("Volume: " + this.getVolume());
         
-        for(int i = 0; i <= this.getVolume(); i+= 10){
-            System.out.print(" | "); 
+        for(int i = 1; i < this.getVolume(); i+=10){
+            System.out.print(" |"); 
         }
         
     }
@@ -79,14 +79,14 @@ public class ControleRemoto implements Controlador {
     @Override
     public void maisVolume() {
         if(this.isLigado() == true){
-            this.setVolume(this.getVolume() + 1);
+            this.setVolume(this.getVolume() + 5);
         }
     }
 
     @Override
     public void menosVolume() {
         if(this.isLigado() == true){
-            this.setVolume(this.getVolume() - 1);
+            this.setVolume(this.getVolume() - 5);
         }
     }
 
