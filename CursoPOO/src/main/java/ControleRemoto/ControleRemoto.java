@@ -22,27 +22,27 @@ public class ControleRemoto implements Controlador {
         
     }
 
-    public int getVolume() {
+    private int getVolume() {
         return volume;
     }
 
-    public void setVolume(int v) {
+    private void setVolume(int v) {
         this.volume = v;
     }
 
-    public boolean isLigado() {
+    private boolean isLigado() {
         return ligado;
     }
 
-    public void setLigado(boolean l) {
+    private void setLigado(boolean l) {
         this.ligado = l;
     }
 
-    public boolean isTocando() {
+    private boolean isTocando() {
         return tocando;
     }
 
-    public void setTocando(boolean t) {
+    private void setTocando(boolean t) {
         this.tocando = t;
     }
 
@@ -66,7 +66,7 @@ public class ControleRemoto implements Controlador {
         System.out.println("Volume: " + this.getVolume());
         
         for(int i = 0; i <= this.getVolume(); i+= 10){
-            System.out.println(" | "); 
+            System.out.print(" | "); 
         }
         
     }
@@ -78,26 +78,43 @@ public class ControleRemoto implements Controlador {
 
     @Override
     public void maisVolume() {
-        if(this.isLigado()){
-            
+        if(this.isLigado() == true){
+            this.setVolume(this.getVolume() + 1);
         }
     }
 
     @Override
     public void menosVolume() {
+        if(this.isLigado() == true){
+            this.setVolume(this.getVolume() - 1);
+        }
     }
 
     @Override
     public void ligarMudo() {
+        if(this.isLigado() == true && this.getVolume() > 0){
+            this.setVolume(0);
+        }
     }
 
+     @Override
+    public void desligarMudo() {
+        if(this.isLigado() == true && this.getVolume() == 0){
+            this.setVolume(50);
+        }
+    }
+    
     @Override
     public void play() {
+        if(this.isLigado() == true && !(this.isTocando()))
+            this.setTocando(true);
     }
 
     @Override
     public void pause() {
+        if(this.isLigado() == true && this.isTocando() == true){
+            this.setTocando(false);
+        }
     }
-    
-    
 }
+   
