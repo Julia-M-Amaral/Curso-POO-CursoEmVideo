@@ -14,8 +14,28 @@ public class BoletimAluno {
     private float nota;
     private int frequencia;
     private String status;
+
+    /*public BoletimAluno(String nome, float nota, int frequencia, String status) {
+        this.nome = nome;
+        this.nota = nota;
+        this.frequencia = frequencia;
+        this.status = status;
+    }*/
     
+      /*Construtor onde o usuário decide os valores*/
+    public BoletimAluno(float nt, int fr, String st){
+        setBoletimAluno(nt,fr,st);
+}
     
+    /*Construtor com valores padrão*/
+    public BoletimAluno(String st){
+        this(10,100,st);
+}
+    
+    /*Construtor padrão*/
+    public BoletimAluno(){
+        this(0,0,null);
+}
     public void inserirNota(float nota){
         
     }
@@ -48,36 +68,45 @@ public class BoletimAluno {
         
     }
 
+    public void print(){
+        System.out.println(getNota()+"\n"+getFrequencia()+"\n"+getStatus()+"\n");
+    }
+    public void setBoletimAluno(float nt, int fr, String st) {
+		setNota(nt);
+		setFrequencia(fr);
+		setStatus(st);
+	}
     
     public float getNota() {
         return nota;
     }
 
-    public void setNota(float n) {
-        this.nota = n;
+    public void setNota(float nota) {
+        this.nota = nota;
     }
 
     public int getFrequencia() {
         return frequencia;
     }
 
-    public void setFrequencia(int f) {
-        this.frequencia = f;
+    public void setFrequencia(int frequencia) {
+        this.frequencia = frequencia;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String s) {
-        this.status = s;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String name) {
-        this.nome = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+    
 }
