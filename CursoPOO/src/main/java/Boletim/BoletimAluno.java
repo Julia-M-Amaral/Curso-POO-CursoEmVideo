@@ -31,9 +31,15 @@ public class BoletimAluno {
     public void alterarStatus(){
         
     }
-    public void calcularMedia(){
-        
+    public double calcularMedia(double PM, double AS){
+        double media = (PM*0.4)+(AS*0.6);
+        return media;
     }
+    public double calcularMedia(double AM, double AC, double AS){
+        double media = (AM*0.3)+(AC*0.2)+(AS*0.5);
+        return media;
+    }
+    
     public void estadoAtual(){
         System.out.println("Nome: " + this.getNome());
         System.out.println("Nota: " + this.getNota());

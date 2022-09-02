@@ -8,19 +8,18 @@ package Boletim;
  *
  * @author jubsz
  */
+import javax.swing.JOptionPane;
 public class Main {
     
     public static void main(String[] args) {
         
         BoletimAluno B1 = new BoletimAluno();
-        //Boletim B2 = new Boletim();
+        BoletimAluno B2 = new BoletimAluno();
         
-        B1.setNota(10);
-        B1.setNome("Jubsz");
-        B1.setFrequencia(5);
-        B1.setStatus("Aprovado");
-        
-        B1.estadoAtual();
+       double mediaGrad = B1.calcularMedia(9.5, 4.7, 6.9);
+       double mediaPos = B2.calcularMedia(7.4, 9.2);
+       
+       JOptionPane.showMessageDialog(null, "A média da graduação é: " + mediaGrad + " <-- Graduação "  + mediaPos + " <-- Pós", "BOLETIM" , JOptionPane.PLAIN_MESSAGE);
         
     }
 }
