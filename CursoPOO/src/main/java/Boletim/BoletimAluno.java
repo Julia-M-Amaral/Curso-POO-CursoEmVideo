@@ -8,7 +8,7 @@ package Boletim;
  *
  * @author jubsz
  */
-public class BoletimAluno {
+public final class BoletimAluno {
  
     private String nome;
     private float nota;
@@ -35,7 +35,16 @@ public class BoletimAluno {
     /*Construtor padrão*/
     public BoletimAluno(){
         this(0,0,null);
+        
+    
 }
+    
+    public void setBoletimAluno(float nt, int fr, String st){
+        setNota(nt);
+        setFrequencia(fr);
+        setStatus(st);
+    }
+            
     public void inserirNota(float nota){
         
     }
@@ -71,11 +80,7 @@ public class BoletimAluno {
     public void print(){
         System.out.println(getNota()+"\n"+getFrequencia()+"\n"+getStatus()+"\n");
     }
-    public void setBoletimAluno(float nt, int fr, String st) {
-		setNota(nt);
-		setFrequencia(fr);
-		setStatus(st);
-	}
+   
     
     public float getNota() {
         return nota;
